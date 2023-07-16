@@ -15,6 +15,8 @@
             <circle id="outline" cx=540px cy=360px r=345px stroke="black" stroke-width="3px" fill="transparent">
             </circle>
             <circle id="inline" cx=540px cy=360px r=320px stroke="black" stroke-width="2px" fill="transparent"></circle>
+            <polygon id="minPointer" points="538,80 542,80 546,360 534,360" fill=black></polygon>
+            <polygon id="houPointer" points="536,150 544,150 548,360 532,360" fill=green></polygon>
             <circle id="secCenter" cx=540 cy=360 r=12 style="fill:red"></circle>
             <polygon id="secPointer" points="538,70 542,70 544,360 536,360" fill=red></polygon>
         </svg>
@@ -49,9 +51,11 @@
         var ifalarm = 0;
 
         // hp,mp,sp分别对应时针、分针、秒针
-        var hp;
+        var hp = document.getElementById("houPointer");
+        addHouRot(hp);
 
-        var mp;
+        var mp = document.getElementById("minPointer");
+        addMinRot(mp);
 
         var sp = document.getElementById("secPointer");
         addSecRot(sp);
@@ -83,15 +87,15 @@
         }
         // 无秒
         function formatHM() {
-                var hour = h, min = m;
-                if (h < 10) {
-                    hour = "0" + h;
-                }
-                if (m < 10) {
-                    min = "0" + m;
-                }
-                return hour + ":" + min;
+            var hour = h, min = m;
+            if (h < 10) {
+                hour = "0" + h;
             }
+            if (m < 10) {
+                min = "0" + m;
+            }
+            return hour + ":" + min;
+        }
         // 时间增加功能
         function addTime() {
             // 有延迟所以设置为900ms
@@ -104,27 +108,35 @@
             setPointers();
             if (ifalarm == 1) {
                 var al = document.getElementById("alarmTime").value;
-                if(al==formatHM())
-                {
+                if (al == formatHM()) {
                     confirm("Time's up!!!");
-                    ifalarm=0;
-                    document.getElementsByName("alarm")[1].checked=true;
+                    ifalarm = 0;
+                    document.getElementsByName("alarm")[1].checked = true;
                 }
             }
         }
         // 时间刷新
         function setTime() {
+            // 保持24小时
+            if (t > 86400) {
+                t =t% 86400;
+            }
             h = Math.floor(t / 3600);
             m = Math.floor((t % 3600) / 60);
             s = t % 60;
             document.getElementById("digital").innerText = formatTime();
-            //setPointers();
         }
         // 刷新指针
         function setPointers() {
             // 秒针部件
             var secR = Math.floor(s * 6);
             sp.setAttribute("transform", "rotate(" + secR + " " + centerX + " " + centerY + ")");
+            // 分针部件
+            var minR = Math.floor(m * 6 + s / 10);
+            mp.setAttribute("transform", "rotate(" + minR + " " + centerX + " " + centerY + ")");
+            // 时针部件
+            var houR = Math.floor(h * 30 + m / 2);
+            hp.setAttribute("transform", "rotate(" + houR + " " + centerX + " " + centerY + ")");
         }
         // 添加鼠标拨动功能
         function addSecRot(p) {
@@ -162,7 +174,76 @@
                 }
             });
         }
+        function addMinRot(p) {
+            // 鼠标按下开始
+            p.addEventListener("mouseup", addTime);
+            p.addEventListener("mousedown", function (event) {
+                var lastAngle = Math.atan2(event.clientY - centerY, event.clientX - centerX) * 180 / Math.PI;
+                clearTimeout(timeid);
+                var accu = 0;
+                var ot = t;
 
+                // 移动时调用函数
+                document.addEventListener("mousemove", rotatePointer);
+
+                // 抬起时删除移动函数
+                document.addEventListener("mouseup", function () {
+                    document.removeEventListener("mousemove", rotatePointer);
+                });
+
+                function rotatePointer(event) {
+                    var currentAngle = Math.atan2(event.clientY - centerY, event.clientX - centerX) * 180 / Math.PI;
+                    var added = currentAngle - lastAngle;
+                    if (currentAngle > 90 && lastAngle < -90) {
+                        added -= 360;
+                    }
+                    if (currentAngle < -90 && lastAngle > 90) {
+                        added += 360;
+                    }
+                    accu += added;
+                    t = ot + Math.floor(accu * 10);
+                    setTime();
+                    lastAngle = currentAngle;
+                    var rotation = currentAngle + 90;
+                    p.setAttribute("transform", "rotate(" + rotation + " " + centerX + " " + centerY + ")");
+                }
+            });
+        }
+        function addHouRot(p) {
+            // 鼠标按下开始
+            p.addEventListener("mouseup", addTime);
+            p.addEventListener("mousedown", function (event) {
+                var lastAngle = Math.atan2(event.clientY - centerY, event.clientX - centerX) * 180 / Math.PI;
+                clearTimeout(timeid);
+                var accu = 0;
+                var ot = t;
+
+                // 移动时调用函数
+                document.addEventListener("mousemove", rotatePointer);
+
+                // 抬起时删除移动函数
+                document.addEventListener("mouseup", function () {
+                    document.removeEventListener("mousemove", rotatePointer);
+                });
+
+                function rotatePointer(event) {
+                    var currentAngle = Math.atan2(event.clientY - centerY, event.clientX - centerX) * 180 / Math.PI;
+                    var added = currentAngle - lastAngle;
+                    if (currentAngle > 90 && lastAngle < -90) {
+                        added -= 360;
+                    }
+                    if (currentAngle < -90 && lastAngle > 90) {
+                        added += 360;
+                    }
+                    accu += added;
+                    t = ot + Math.floor(accu * 120);
+                    setTime();
+                    lastAngle = currentAngle;
+                    var rotation = currentAngle + 90;
+                    p.setAttribute("transform", "rotate(" + rotation + " " + centerX + " " + centerY + ")");
+                }
+            });
+        }
         // 闹钟函数
         function alarmon() {
             ifalarm = 1;
