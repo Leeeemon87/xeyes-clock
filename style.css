@@ -1,0 +1,35 @@
+/* 伪类，定义样式中的变量，方便全局使用 */
+:root {
+    --centerx: 540px;
+    --centery: 360px;
+    --width: 1080px;
+    --height: 720px;
+}
+
+#canvas {
+    margin: auto;
+    float: none;
+    width: var(--width);
+    height: var(--height);
+    text-align: center;
+}
+
+#digital {
+    margin: auto;
+    float: none;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 28px;
+    font-weight: lighter;
+    text-indent: 0%;
+    text-align: center;
+}
+
+.degree {
+    margin: auto;
+    float: none;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 28px;
+    font-weight: lighter;
+    text-indent: 0%;
+    text-align: center;
+}

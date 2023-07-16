@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="uft-8">
+    <title>SVG时钟</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <!-- 时钟面 -->
+    <div id="face">
+        <svg id="canvas">
+            <circle id="outline" cx=540px cy=360px r=345px stroke="black" stroke-width="3px" fill="transparent"></circle>
+            <circle id="inline" cx=540px cy=360px r=320px stroke="black" stroke-width="2px" fill="transparent"></circle>
+            <circle id="secCenter" cx=540 cy=360 r=12 style="fill:red"></circle>
+            <polygon id="secPointer" points="538,70 542,70 544,360 536,360" fill=red></polygon>
+        </svg>
+        <div id="digital">00:00:00</div>
+        <!-- debug用 -->
+        <!-- <div class="degree" id="degree">0</div> -->
+    </div>
+    <script>
+        // 中心点位置
+        var centerX = 540;
+        var centerY = 360;
+        // 标准时间调用
+        var date = new Date();
+        // h,m,s对应小时、分钟、秒钟,t表示秒单位累积时间
+        var h, m, s, t;
+        // 记录计时函数的id
+        var timeid;
+
+        // hp,mp,sp分别对应时针、分针、秒针
+        var hp;
+
+        var mp;
+
+        var sp = document.getElementById("secPointer");
+        addSecRot(sp);
+
+        // 准备就绪，时间恢复
+        resetTime();
+        addTime();
+
+        // 重置时间功能
+        function resetTime() {
+            h = date.getHours();// >= 12 ? (date.getHours() - 12) : date.getHours();
+            m = date.getMinutes();
+            s = date.getSeconds();
+            t = h * 3600 + m * 60 + s;
+        }
+        // 时间按格式输出
+        function formatTime() {
+            var hour = h, min = m, sec = s;
+            if (h < 10) {
+                hour = "0" + h;
+            }
+            if (m < 10) {
+                min = "0" + m;
+            }
+            if (s < 10) {
+                sec = "0" + s;
+            }
+            return hour + ":" + min + ":" + sec;
+        }
+        // 时间增加功能
+        function addTime() {
+            // 有延迟所以设置为900ms
+            timeid = setTimeout(addTime, 900);
+            t++;
+            h = Math.floor(t / 3600);
+            m = Math.floor((t % 3600) / 60);
+            s = t % 60;
+            document.getElementById("digital").innerText = formatTime();
+            setPointers();
+        }
+        // 时间刷新
+        function setTime() {
+            h = Math.floor(t / 3600);
+            m = Math.floor((t % 3600) / 60);
+            s = t % 60;
+            document.getElementById("digital").innerText = formatTime();
+            //setPointers();
+        }
+        // 刷新指针
+        function setPointers() {
+            // 秒针部件
+            var secR = Math.floor(s * 6);
+            sp.setAttribute("transform", "rotate(" + secR + " " + centerX + " " + centerY + ")");
+
+        }
+        // 添加鼠标拨动功能
+        function addSecRot(p) {
+            // 鼠标按下开始
+            p.addEventListener("mouseup", addTime);
+            p.addEventListener("mousedown", function (event) {
+                var lastAngle = Math.atan2(event.clientY - centerY, event.clientX - centerX) * 180 / Math.PI;
+                clearTimeout(timeid);
+                var accu = 0;
+                var ot = t;
+
+                // 移动时调用函数
+                document.addEventListener("mousemove", rotatePointer);
+
+                // 抬起时删除移动函数
+                document.addEventListener("mouseup", function () {
+                    document.removeEventListener("mousemove", rotatePointer);
+                });
+
+                function rotatePointer(event) {
+                    var currentAngle = Math.atan2(event.clientY - centerY, event.clientX - centerX) * 180 / Math.PI;
+                    var added = currentAngle - lastAngle;
+                    if (currentAngle > 90 && lastAngle < -90) {
+                        added -= 360;
+                    }
+                    if (currentAngle < -90 && lastAngle > 90) {
+                        added += 360;
+                    }
+                    accu += added;
+                    t = ot + Math.floor(accu / 6);
+                    setTime();
+                    lastAngle = currentAngle;
+                    // document.getElementById("degree").innerHTML=currentAngle;
+                    var rotation = currentAngle + 90;
+                    p.setAttribute("transform", "rotate(" + rotation + " " + centerX + " " + centerY + ")");
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
