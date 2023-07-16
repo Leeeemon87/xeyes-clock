@@ -11,12 +11,19 @@
     <!-- 时钟面 -->
     <div id="face">
         <svg id="canvas">
+            <!-- svg写在这一部分 -->
             <circle id="outline" cx=540px cy=360px r=345px stroke="black" stroke-width="3px" fill="transparent"></circle>
             <circle id="inline" cx=540px cy=360px r=320px stroke="black" stroke-width="2px" fill="transparent"></circle>
             <circle id="secCenter" cx=540 cy=360 r=12 style="fill:red"></circle>
             <polygon id="secPointer" points="538,70 542,70 544,360 536,360" fill=red></polygon>
         </svg>
+        <!-- 以下部分需要css样式 -->
+        <!-- 数字时钟 -->
         <div id="digital">00:00:00</div>
+        <!-- 闹钟 -->
+        <!-- 秒表 -->
+        <!-- 计时器 -->
+        
         <!-- debug用 -->
         <!-- <div class="degree" id="degree">0</div> -->
     </div>
