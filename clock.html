@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <meta charset="uft-8">
+    <meta charset="utf-8">
     <title>SVG时钟</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -12,7 +12,8 @@
     <div id="face">
         <svg id="canvas">
             <!-- svg写在这一部分 -->
-            <circle id="outline" cx=540px cy=360px r=345px stroke="black" stroke-width="3px" fill="transparent"></circle>
+            <circle id="outline" cx=540px cy=360px r=345px stroke="black" stroke-width="3px" fill="transparent">
+            </circle>
             <circle id="inline" cx=540px cy=360px r=320px stroke="black" stroke-width="2px" fill="transparent"></circle>
             <circle id="secCenter" cx=540 cy=360 r=12 style="fill:red"></circle>
             <polygon id="secPointer" points="538,70 542,70 544,360 536,360" fill=red></polygon>
@@ -21,11 +22,18 @@
         <!-- 数字时钟 -->
         <div id="digital">00:00:00</div>
         <!-- 闹钟 -->
+        <div id="alarm">
+            <form id="alarmForm">
+                闹钟时间: <input type="time" id="alarmTime" value="12:12"><br>
+                <input type="radio" name="alarm" value="on" onchange="alarmon()">On<br>
+                <input type="radio" name="alarm" value="off" onchange="alarmoff()" checked="true">Off
+            </form>
+        </div>
         <!-- 秒表 -->
         <!-- 计时器 -->
-        
+
         <!-- debug用 -->
-        <!-- <div class="degree" id="degree">0</div> -->
+        <div class="degree" id="degree">0</div>
     </div>
     <script>
         // 中心点位置
@@ -37,6 +45,8 @@
         var h, m, s, t;
         // 记录计时函数的id
         var timeid;
+        // 记录闹钟是否打开
+        var ifalarm = 0;
 
         // hp,mp,sp分别对应时针、分针、秒针
         var hp;
@@ -71,6 +81,17 @@
             }
             return hour + ":" + min + ":" + sec;
         }
+        // 无秒
+        function formatHM() {
+                var hour = h, min = m;
+                if (h < 10) {
+                    hour = "0" + h;
+                }
+                if (m < 10) {
+                    min = "0" + m;
+                }
+                return hour + ":" + min;
+            }
         // 时间增加功能
         function addTime() {
             // 有延迟所以设置为900ms
@@ -81,6 +102,15 @@
             s = t % 60;
             document.getElementById("digital").innerText = formatTime();
             setPointers();
+            if (ifalarm == 1) {
+                var al = document.getElementById("alarmTime").value;
+                if(al==formatHM())
+                {
+                    confirm("Time's up!!!");
+                    ifalarm=0;
+                    document.getElementsByName("alarm")[1].checked=true;
+                }
+            }
         }
         // 时间刷新
         function setTime() {
@@ -95,7 +125,6 @@
             // 秒针部件
             var secR = Math.floor(s * 6);
             sp.setAttribute("transform", "rotate(" + secR + " " + centerX + " " + centerY + ")");
-
         }
         // 添加鼠标拨动功能
         function addSecRot(p) {
@@ -128,11 +157,18 @@
                     t = ot + Math.floor(accu / 6);
                     setTime();
                     lastAngle = currentAngle;
-                    // document.getElementById("degree").innerHTML=currentAngle;
                     var rotation = currentAngle + 90;
                     p.setAttribute("transform", "rotate(" + rotation + " " + centerX + " " + centerY + ")");
                 }
             });
+        }
+
+        // 闹钟函数
+        function alarmon() {
+            ifalarm = 1;
+        }
+        function alarmoff() {
+            ifalarm = 0;
         }
     </script>
 </body>
