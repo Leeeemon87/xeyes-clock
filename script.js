@@ -1,8 +1,6 @@
 // 中心点位置
 var centerX = 540;
 var centerY = 360;
-// 标准时间调用
-var date = new Date();
 // h,m,s对应小时、分钟、秒钟,t表示秒单位累积时间
 var h, m, s, t;
 // 记录计时函数的id
@@ -75,17 +73,25 @@ function formatSe() {
 
 // 计时器部件
 
-
+// 参数调整时间
+function confirmClock() {
+    h = document.getElementById("clockH").valueAsNumber;
+    m = document.getElementById("clockM").valueAsNumber;
+    s = document.getElementById("clockS").valueAsNumber;
+    t = h * 3600 + m * 60 + s;
+    setTime();
+}
 
 // 重置时间功能
 function resetTime() {
+    date = new Date();
     h = date.getHours();// >= 12 ? (date.getHours() - 12) : date.getHours();
     m = date.getMinutes();
     s = date.getSeconds();
     t = h * 3600 + m * 60 + s;
 }
 // 时间按格式输出
-function formatTime() {
+function formatTime(h, m, s) {
     var hour = h, min = m, sec = s;
     if (h < 10) {
         hour = "0" + h;
@@ -117,7 +123,7 @@ function addTime() {
     h = Math.floor(t / 3600);
     m = Math.floor((t % 3600) / 60);
     s = t % 60;
-    document.getElementById("digital").innerText = formatTime();
+    document.getElementById("digital").innerText = formatTime(h, m, s);
     setPointers();
     if (ifalarm == 1) {
         var al = document.getElementById("alarmTime").value;
@@ -137,7 +143,7 @@ function setTime() {
     h = Math.floor(t / 3600);
     m = Math.floor((t % 3600) / 60);
     s = t % 60;
-    document.getElementById("digital").innerText = formatTime();
+    document.getElementById("digital").innerText = formatTime(h, m, s);
 }
 // 刷新指针
 function setPointers() {

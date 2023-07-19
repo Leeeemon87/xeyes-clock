@@ -45,7 +45,7 @@
         <div id="counter">
             <form id="couterForm">
                 计时器
-                <input type="number" id="counterH" min="0" max="24" value="0">
+                <input type="number" id="counterH" min="0" max="23" value="0">
                 <input type="number" id="counterM" min="0" max="59" value="0">
                 <input type="number" id="counterS" min="0" max="59" value="0"><br>
                 <button type="button" onclick="resetCounter()" name="reset">重置</button>
@@ -55,7 +55,14 @@
         </div>
         <!-- 参数调整时间 -->
         <div id="setter">
-
+            <form id="couterForm">
+                时钟
+                <input type="number" id="clockH" min="0" max="24" value=0>
+                <input type="number" id="clockM" min="0" max="59" value=0>
+                <input type="number" id="clockS" min="0" max="59" value=0><br>
+                <button type="button" onclick="resetTime()" name="reset">重置</button>
+                <button type="button" onclick="confirmClock()" id="confirmC">确认</button>
+            </form>
         </div>
     </div>
     <script src="script.js"></script>
