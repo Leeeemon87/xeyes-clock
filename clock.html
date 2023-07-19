@@ -43,7 +43,15 @@
         </div>
         <!-- 计时器 -->
         <div id="counter">
-            
+            <form id="couterForm">
+                计时器
+                <input type="number" id="counterH" min="0" max="24" value="0">
+                <input type="number" id="counterM" min="0" max="59" value="0">
+                <input type="number" id="counterS" min="0" max="59" value="0"><br>
+                <button type="button" onclick="resetCounter()" name="reset">重置</button>
+                <button type="button" onclick="startedCounter()" id="startC">开始</button>
+                <button type="button" onclick="pausedCounter()" id="pauseC" style="display: none;">暂停</button>
+            </form>
         </div>
         <!-- 参数调整时间 -->
         <div id="setter">
@@ -127,6 +135,10 @@
             }
             return seM+":"+seS+"."+seCs;
         }
+
+        // 计时器部件
+
+
 
         // 重置时间功能
         function resetTime() {

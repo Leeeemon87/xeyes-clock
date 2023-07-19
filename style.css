@@ -33,3 +33,30 @@
     text-indent: 0%;
     text-align: center;
 }
+
+/* 闹钟模块 */
+#alarm {
+    position: absolute;
+    margin: auto;
+    float: none;
+    top: 500px;
+    right: 400px;
+}
+
+/* 秒表模块 */
+#se {
+    position: absolute;
+    margin: auto;
+    float: none;
+    top: 500px;
+    right: 200px;
+}
+
+/* 计时器模块 */
+#counter {
+    position: absolute;
+    margin: auto;
+    float: none;
+    top: 700px;
+    right: 200px;
+}
