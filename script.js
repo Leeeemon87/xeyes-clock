@@ -96,7 +96,7 @@ function startedCounter() {
         total = 3600 * document.getElementById("counterH").valueAsNumber +
             60 * document.getElementById("counterM").valueAsNumber +
             document.getElementById("counterS").valueAsNumber;
-            counterOn=true;
+        counterOn = true;
         coText.style.display = "block";
         coIn.style.display = "none";
     }
@@ -112,8 +112,7 @@ function pausedCounter() {
 function cut() {
     total--;
     coText.innerHTML = formatCo();
-    if(total<=0)
-    {
+    if (total <= 0) {
         confirm("Count Time's up!!!");
         return;
     }
