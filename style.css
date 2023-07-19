@@ -24,16 +24,6 @@
     text-align: center;
 }
 
-.degree {
-    margin: auto;
-    float: none;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 28px;
-    font-weight: lighter;
-    text-indent: 0%;
-    text-align: center;
-}
-
 /* 闹钟模块 */
 #alarm {
     position: absolute;
