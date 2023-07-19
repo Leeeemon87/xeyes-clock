@@ -72,6 +72,69 @@ function formatSe() {
 }
 
 // 计时器部件
+var total;
+var counterOn = false;
+var cutId;
+var coText = document.getElementById("counterOut");
+var coIn = document.getElementById("counterIn");
+var coButS = document.getElementById("startC");
+var coButP = document.getElementById("pauseC");
+// 重置计时器
+function resetCounter() {
+    clearTimeout(cutId);
+    counterOn = false;
+    coText.style.display = "none";
+    coIn.style.display = "block";
+    coButP.style.display = "none";
+    coButS.style.display = "block";
+}
+// 按开始
+function startedCounter() {
+    coButP.style.display = "block";
+    coButS.style.display = "none";
+    if (counterOn == false) {
+        total = 3600 * document.getElementById("counterH").valueAsNumber +
+            60 * document.getElementById("counterM").valueAsNumber +
+            document.getElementById("counterS").valueAsNumber;
+            counterOn=true;
+        coText.style.display = "block";
+        coIn.style.display = "none";
+    }
+    cut();
+}
+// 按暂停
+function pausedCounter() {
+    coButP.style.display = "none";
+    coButS.style.display = "block";
+    clearTimeout(cutId);
+}
+// 开始计时
+function cut() {
+    total--;
+    coText.innerHTML = formatCo();
+    if(total<=0)
+    {
+        confirm("Count Time's up!!!");
+        return;
+    }
+    cutId = setTimeout(cut, 1000);
+}
+// 格式化计时器
+function formatCo() {
+    var ch = Math.floor(total / 3600);
+    var cm = Math.floor((total % 3600) / 60);
+    var cs = total % 60;
+    if (ch < 10) {
+        ch = "0" + ch;
+    }
+    if (cm < 10) {
+        cm = "0" + cm;
+    }
+    if (cs < 10) {
+        cs = "0" + cs;
+    }
+    return ch + ":" + cm + ":" + cs;
+}
 
 
 // 参数调整时间
@@ -129,7 +192,7 @@ function addTime() {
     if (ifalarm == 1) {
         var al = document.getElementById("alarmTime").value;
         if (al == formatHM()) {
-            confirm("Time's up!!!");
+            confirm("Alarm Time's up!!!");
             ifalarm = 0;
             document.getElementsByName("alarm")[1].checked = true;
         }

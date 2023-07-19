@@ -45,10 +45,16 @@
         <div id="counter">
             <form id="couterForm">
                 计时器
-                <input type="number" id="counterH" min="0" max="23" value="0">
-                <input type="number" id="counterM" min="0" max="59" value="0">
-                <input type="number" id="counterS" min="0" max="59" value="0"><br>
-                <button type="button" onclick="resetCounter()" name="reset">重置</button>
+                <div id="counterIn">
+                    <input type="number" id="counterH" min="0" max="23" value="0">
+                    <input type="number" id="counterM" min="0" max="59" value="0">
+                    <input type="number" id="counterS" min="0" max="59" value="0">
+                </div>
+                <div id="counterOut" style="display: none;">
+                    00:00:00
+                </div>
+                <br>
+                <button type="button" onclick="resetCounter()" name="reset">重置</button><br>
                 <button type="button" onclick="startedCounter()" id="startC">开始</button>
                 <button type="button" onclick="pausedCounter()" id="pauseC" style="display: none;">暂停</button>
             </form>
