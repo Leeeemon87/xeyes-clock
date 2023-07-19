@@ -16,6 +16,9 @@
 
 #digital {
     margin: auto;
+    position: absolute;
+    top: 20px;
+    right: 500px;
     float: none;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 28px;
@@ -48,7 +51,7 @@
     margin: auto;
     float: none;
     top: 700px;
-    right: 200px;
+    right: 400px;
 }
 
 /* 参数设置时间模块 */
@@ -56,6 +59,6 @@
     position: absolute;
     margin: auto;
     float: none;
-    top: 900px;
+    top: 700px;
     right: 200px;
 }
