@@ -32,8 +32,23 @@
             </form>
         </div>
         <!-- 秒表 -->
+        <div id="se">
+            <form id="seForm">
+                秒表
+                <div id="seDigital">00:00.00</div>
+                <button type="button" onclick="resetSe()" name="reset">重置</button><br>
+                <button type="button" onclick="started()" id="start">开始</button>
+                <button type="button" onclick="paused()" id="pause" style="display: none;">暂停</button>
+            </form>
+        </div>
         <!-- 计时器 -->
+        <div id="counter">
+            
+        </div>
+        <!-- 参数调整时间 -->
+        <div id="setter">
 
+        </div>
         <!-- debug用 -->
         <div class="degree" id="degree">0</div>
     </div>
@@ -63,6 +78,55 @@
         // 准备就绪，时间恢复
         resetTime();
         addTime();
+
+        // 秒表部件
+        var seUp=0;
+        var seId;
+        var butStart=document.getElementById("start");
+        var butPause=document.getElementById("pause");
+        var seText=document.getElementById("seDigital");
+        // 重置秒表
+        function resetSe() {
+            clearTimeout(seId);
+            seUp=0;
+            seText.innerHTML=formatSe();
+            butPause.style.display = "none";
+            butStart.style.display = "block";
+        }
+        // 继续按钮按下
+        function started() {
+            butPause.style.display="block";
+            butStart.style.display="none";
+            addSe();
+        }
+        // 暂停键按下
+        function paused() {
+            butPause.style.display = "none";
+            butStart.style.display = "block";
+            clearTimeout(seId);
+        }
+        // 秒表增加
+        function addSe() {
+            seUp++;
+            seId=setTimeout(addSe, 10);
+            seText.innerHTML = formatSe();
+        }
+        // 格式化秒表计数
+        function formatSe() {
+            var seM=Math.floor(seUp/6000);
+            var seS=Math.floor((seUp%6000)/100);
+            var seCs=Math.floor(seUp%100);
+            if(seM<10) {
+                seM="0"+seM;
+            }
+            if(seS<10) {
+                seS="0"+seS;
+            }
+            if(seCs<10) {
+                seCs="0"+seCs;
+            }
+            return seM+":"+seS+"."+seCs;
+        }
 
         // 重置时间功能
         function resetTime() {
@@ -99,7 +163,7 @@
         // 时间增加功能
         function addTime() {
             // 有延迟所以设置为900ms
-            timeid = setTimeout(addTime, 900);
+            timeid = setTimeout(addTime, 1000);
             t++;
             h = Math.floor(t / 3600);
             m = Math.floor((t % 3600) / 60);
