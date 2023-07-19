@@ -17,11 +17,11 @@
 #digital {
     margin: auto;
     position: absolute;
-    top: 20px;
+    top: 50px;
     right: 500px;
     float: none;
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 28px;
+    font-size: 50px;
     font-weight: lighter;
     text-indent: 0%;
     text-align: center;
@@ -51,7 +51,7 @@
     margin: auto;
     float: none;
     top: 700px;
-    right: 400px;
+    right: 500px;
 }
 
 /* 参数设置时间模块 */
