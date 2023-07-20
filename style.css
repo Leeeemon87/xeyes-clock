@@ -14,51 +14,672 @@
     text-align: center;
 }
 
+/*功能实现模块背景css*/
+#funcbackground {
+    position: absolute;
+    border: 2px;
+    border: solid;
+    border-color: gray;
+    width: 600px;
+    height: 700px;
+    right: 167px;
+    top: 30px;
+    background-color: navajowhite;
+    border-radius: 12px;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+/*数字时钟模块*/
+#digitalCss {
+    position: absolute;
+    margin: auto;
+    border: 10px;
+    width: 500px;
+    height: 200px;
+    top: 75px;
+    right: 220px;
+    background-color: antiquewhite;
+    border-radius: 12px;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#digitalCss .hourCss {
+    position: absolute;
+    margin-top: auto;
+    border: 10px;
+    width: 110px;
+    height: 140px;
+    top: 20px;
+    left: 59px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#digitalCss .minuteCss {
+    position: absolute;
+    margin-top: auto;
+    border: 10px;
+    width: 110px;
+    height: 140px;
+    top: 20px;
+    left: 194px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#digitalCss .secondCss {
+    position: absolute;
+    margin-top: auto;
+    border: 10px;
+    width: 110px;
+    height: 140px;
+    top: 20px;
+    left: 332px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#digitalCss .digitalCss_label {
+    position: absolute;
+    bottom: -4px;
+    white-space: pre;
+    left: 20px;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
 #digital {
     margin: auto;
     position: absolute;
-    top: 50px;
-    right: 500px;
+    top: 100px;
+    right: 275px;
     float: none;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 50px;
-    font-weight: lighter;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 90px;
+    font-weight: 500;
     text-indent: 0%;
     text-align: center;
+    color: dimgray;
 }
 
 /* 闹钟模块 */
 #alarm {
     position: absolute;
+    background-color: antiquewhite;
     margin: auto;
     float: none;
-    top: 500px;
-    right: 400px;
+    top: 360px;
+    right: 500px;
+    width: 220px;
+    height: 100px;
+    border: 10px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
 }
+
+#alarmTitle {
+    position: absolute;
+    margin: auto;
+    float: none;
+    width: 140px;
+    height: 50px;
+    top: 300px;
+    right: 540px;
+    border: 10px;
+    border-radius: 12px;
+    background-color: antiquewhite;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#alarmTitle .labelTitle {
+    position: absolute;
+    text-align: center;
+    top: -12px;
+    left: 20px;
+    color: rgb(133, 129, 121);
+    font-size: 17px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#alarmTitle .circle {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    left: 80px;
+    top: 6px;
+    background: no-repeat 7px 6px;
+    background-color: white;
+    background-image: url("alarm_image.png");
+    border-radius: 50%;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.alarmbuttonCss {
+    position: absolute;
+    width: 80px;
+    height: 30px;
+    top: 60px;
+    left: 70px;
+    background-color: white;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+}
+
+#alarmTime {
+    position: absolute;
+    left: 54px;
+    top: 13px;
+    appearance: none;
+    border: 2px;
+    border-style: inset;
+    padding: 4px;
+    width: 100px;
+    text-align: center;
+    font-size: 20px;
+    color: rgb(99, 98, 98);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 4px;
+    background-color: white; 
+
+}
+
+.alarmtitle {
+    position: absolute;
+    left: 8px;
+    top: -5px;
+    font-size: 16px;
+    color: dimgray;
+    font-family: MingLiU;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.alarmbuttonCss label {
+    color: dimgray;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    font-size: 18px;
+}
+
+.alarmbuttonCss label:hover {
+    color: gold;
+}
+
+.alarmbuttonCss input[type="radio"]:checked + label {
+    color: goldenrod;
+}
+
+.onCss {
+    position: absolute;
+    width: 40px;
+    left: 10px;
+}
+
+.offCss {
+    position: absolute;
+    width: 40px;
+    right: 1px;
+}
+
 
 /* 秒表模块 */
 #se {
     position: absolute;
+    background-color: antiquewhite;
     margin: auto;
     float: none;
-    top: 500px;
-    right: 200px;
+    top: 360px;
+    right: 220px;
+    width: 220px;
+    height: 100px;
+    border: 10px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#stopwatchTitle {
+    position: absolute;
+    margin: auto;
+    float: none;
+    width: 160px;
+    height: 50px;
+    top: 300px;
+    right: 249px;
+    border: 10px;
+    border-radius: 12px;
+    background-color: antiquewhite;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#stopwatchTitle .labelTitle {
+    position: absolute;
+    text-align: center;
+    top: -12px;
+    left: 20px;
+    color: rgb(133, 129, 121);
+    font-size: 17px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#stopwatchTitle .circle {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    left: 105px;
+    top: 6px;
+    background: no-repeat 6px 5px;
+    background-color: white;
+    background-image: url("stopwatch_image.png");
+    border-radius: 50%;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+#stopwatchtimeCss {
+    position: absolute;
+    left: 49px;
+    top: 15px;
+    appearance: none;
+    border: 2px;
+    border-style: inset;
+    padding: 5px;
+    width: 110px;
+    text-align: center;
+    font-size: 20px;
+    color: rgb(99, 98, 98);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 4px;
+    background-color: white;
+}
+
+#se .buttonCss1 {
+    position: absolute;
+    top: 58px;
+    left: 42px;
+    padding: 5px 12px;
+    font-size: 16px;
+    color: dimgray;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+#se .buttonCss {
+    position: absolute;
+    top: 58px;
+    right: 42px;
+    padding: 5px 12px;
+    font-size: 16px;
+    color: dimgray;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+#se .buttonCss1:hover {
+    background-color: floralwhite;
+}
+  
+#se .buttonCss1:active {
+    background-color: navajowhite;
+}
+
+#se .buttonCss:hover {
+    background-color: floralwhite;
+}
+  
+#se .buttonCss:active {
+    background-color: navajowhite;
 }
 
 /* 计时器模块 */
 #counter {
     position: absolute;
+    background-color: antiquewhite;
     margin: auto;
     float: none;
-    top: 700px;
+    top: 550px;
     right: 500px;
+    width: 220px;
+    height: 100px;
+    border: 10px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#timerTitle {
+    position: absolute;
+    margin: auto;
+    float: none;
+    width: 140px;
+    height: 50px;
+    top: 488px;
+    right: 540px;
+    border: 10px;
+    border-radius: 12px;
+    background-color: antiquewhite;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#timerTitle .labelTitle {
+    position: absolute;
+    text-align: center;
+    top: -12px;
+    left: 20px;
+    color: rgb(133, 129, 121);
+    font-size: 17px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#timerTitle .circle {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    left: 80px;
+    top: 6px;
+    background: no-repeat 8px 6px;
+    background-color: white;
+    background-image: url("timer_image.png");
+    border-radius: 50%;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+#counterH {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    appearance: none;
+    border: 2px;
+    border-style: inset;
+    padding: 5px;
+    width: 45px;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(99, 98, 98);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 4px;
+    background-color: white;
+}
+
+#counterM {
+    position: absolute;
+    left: 80px;
+    top: 15px;
+    appearance: none;
+    border: 2px;
+    border-style: inset;
+    padding: 5px;
+    width: 45px;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(99, 98, 98);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 4px;
+    background-color: white;
+}
+
+#counterS {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    appearance: none;
+    border: 2px;
+    border-style: inset;
+    padding: 5px;
+    width: 45px;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(99, 98, 98);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 4px;
+    background-color: white;
+}
+
+#counterOut {
+    position: absolute;
+    left: 49px;
+    top: 15px;
+    appearance: none;
+    border: 2px;
+    border-style: inset;
+    padding: 5px;
+    width: 110px;
+    text-align: center;
+    font-size: 20px;
+    color: rgb(99, 98, 98);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 4px;
+    background-color: white;
+}
+
+#counter .buttonCss1 {
+    position: absolute;
+    top: 58px;
+    left: 42px;
+    padding: 5px 12px;
+    font-size: 16px;
+    color: dimgray;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+#counter .buttonCss {
+    position: absolute;
+    top: 58px;
+    right: 42px;
+    padding: 5px 12px;
+    font-size: 16px;
+    color: dimgray;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+#counter .buttonCss2 {
+    position: absolute;
+    top: 58px;
+    right: 42px;
+    padding: 5px 12px;
+    font-size: 16px;
+    color: dimgray;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+#counter .buttonCss1:hover {
+    background-color: floralwhite;
+}
+  
+#counter .buttonCss1:active {
+    background-color: navajowhite;
+}
+
+#counter .buttonCss:hover {
+    background-color: floralwhite;
+}
+  
+#counter .buttonCss:active {
+    background-color: navajowhite;
+}
+
+#counter .buttonCss2:hover {
+    background-color: floralwhite;
+}
+  
+#counter .buttonCss2:active {
+    background-color: navajowhite;
 }
 
 /* 参数设置时间模块 */
 #setter {
     position: absolute;
+    background-color: antiquewhite;
     margin: auto;
     float: none;
-    top: 700px;
-    right: 200px;
+    top: 550px;
+    right: 220px;
+    width: 220px;
+    height: 100px;
+    border: 10px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#clockTitle {
+    position: absolute;
+    margin: auto;
+    float: none;
+    width: 140px;
+    height: 50px;
+    top: 488px;
+    right: 258px;
+    border: 10px;
+    border-radius: 12px;
+    background-color: antiquewhite;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#clockTitle .labelTitle {
+    position: absolute;
+    text-align: center;
+    top: -12px;
+    left: 20px;
+    color: rgb(133, 129, 121);
+    font-size: 17px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#clockTitle .circle {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    left: 80px;
+    top: 6px;
+    background: no-repeat 7px 6px;
+    background-color: white;
+    background-image: url("clock_image.png");
+    border-radius: 50%;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+#clockH {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    appearance: none;
+    border: 2px;
+    border-style: inset;
+    padding: 5px;
+    width: 45px;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(99, 98, 98);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 4px;
+    background-color: white;
+}
+
+#clockM {
+    position: absolute;
+    left: 80px;
+    top: 15px;
+    appearance: none;
+    border: 2px;
+    border-style: inset;
+    padding: 5px;
+    width: 45px;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(99, 98, 98);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 4px;
+    background-color: white;
+}
+
+#clockS {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    appearance: none;
+    border: 2px;
+    border-style: inset;
+    padding: 5px;
+    width: 45px;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(99, 98, 98);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 4px;
+    background-color: white;
+}
+
+#setter .buttonCss {
+    position: absolute;
+    top: 58px;
+    right: 42px;
+    padding: 5px 12px;
+    font-size: 16px;
+    color: dimgray;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+#setter .buttonCss1 {
+    position: absolute;
+    top: 58px;
+    left: 42px;
+    padding: 5px 12px;
+    font-size: 16px;
+    color: dimgray;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+#setter .buttonCss1:hover {
+    background-color: floralwhite;
+}
+  
+#setter .buttonCss1:active {
+    background-color: navajowhite;
+}
+
+#setter .buttonCss:hover {
+    background-color: floralwhite;
+}
+  
+#setter .buttonCss:active {
+    background-color: navajowhite;
 }
