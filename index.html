@@ -10,108 +10,112 @@
 <body>
     <!-- 时钟面 -->
     <div id="face">
-        <svg id="canvas">
-            <!-- svg写在这一部分 -->
-            <circle id="outline" cx=540px cy=360px r=345px stroke="black" stroke-width="3px" fill="transparent">
-            </circle>
-            <circle id="inline" cx=540px cy=360px r=320px stroke="black" stroke-width="2px" fill="transparent"></circle>
-            <polygon id="minPointer" points="538,80 542,80 546,360 534,360" fill=black></polygon>
-            <polygon id="houPointer" points="536,150 544,150 548,360 532,360" fill=green></polygon>
-            <circle id="secCenter" cx=540 cy=360 r=12 style="fill:red"></circle>
-            <polygon id="secPointer" points="538,70 542,70 544,360 536,360" fill=red></polygon>
-        </svg>
+        <div id="svgclock">
+            <svg id="canvas">
+                <!-- svg写在这一部分 -->
+                <circle id="outline" cx=540px cy=360px r=345px stroke="black" stroke-width="3px" fill="transparent">
+                </circle>
+                <circle id="inline" cx=540px cy=360px r=320px stroke="black" stroke-width="2px" fill="transparent"></circle>
+                <polygon id="minPointer" points="538,80 542,80 546,360 534,360" fill=black></polygon>
+                <polygon id="houPointer" points="536,150 544,150 548,360 532,360" fill=green></polygon>
+                <circle id="secCenter" cx=540 cy=360 r=12 style="fill:red"></circle>
+                <polygon id="secPointer" points="538,70 542,70 544,360 536,360" fill=red></polygon>
+            </svg>
+        </div>
         <!-- 以下部分需要css样式 -->
-        <div id="funcbackground"></div>
-        <!-- 数字时钟 -->
-        <div id="digitalCss">
-            <div class="hourCss">
-                <p class="digitalCss_label">  Hours</p>
-            </div>
-            <div class="minuteCss">
-                <p class="digitalCss_label">Minutes</p>
-            </div>
-            <div class="secondCss">
-                <p class="digitalCss_label">Seconds</p>
-            </div>
-        </div>
-        <div id="digital">00:00:00</div>
-        <!-- 闹钟 -->
-        <div id="alarmTitle">
-            <p class="labelTitle">
-                闹钟<br>alarm
-                <div class="circle"></div>
-            </p>    
-        </div>
-        <div id="alarm">
-            <form id="alarmForm">
-                <input type="time" id="alarmTime" value="12:12">
-                <div class="alarmbuttonCss">
-                    <input type="radio" name="alarm" value="on" onchange="alarmon()" id="alarmonCss">
-                    <label for="alarmonCss" class="onCss">
-                        <p>ON</p>
-                    </label>
-                    <input type="radio" name="alarm" value="off" onchange="alarmoff()" checked="true" id="alarmoffCss">
-                    <label for="alarmoffCss" class="offCss">
-                        <p>OFF</p>
-                    </label>
+        <div id="clockfunction">
+            <div id="funcbackground"></div>
+            <!-- 数字时钟 -->
+            <div id="digitalCss">
+                <div class="hourCss">
+                    <p class="digitalCss_label">  Hours</p>
                 </div>
-            </form>
-        </div>
-        <!-- 秒表 -->
-        <div id="stopwatchTitle">
-            <p class="labelTitle">
-                秒表<br>stopwatch
-                <div class="circle"></div>
-            </p>    
-        </div>
-        <div id="se">
-            <form id="seForm">
-                <div id="stopwatchtimeCss">
-                    <div id="seDigital">00:00.00</div>
-                </div>              
-                <button type="button" onclick="resetSe()" name="reset" class="buttonCss1">重置</button>
-                <button type="button" onclick="started()" id="start" class="buttonCss">开始</button>
-                <button type="button" onclick="paused()" id="pause" style="display: none;" class="buttonCss">暂停</button>
-            </form>
-        </div>
-        <!-- 计时器 -->
-        <div id="timerTitle">
-            <p class="labelTitle">
-                计时器<br>timer
-                <div class="circle"></div>
-            </p>    
-        </div>
-        <div id="counter">
-            <form id="couterForm">
-                <div id="counterIn">
-                    <input type="number" id="counterH" min="0" max="23" value="0">
-                    <input type="number" id="counterM" min="0" max="59" value="0">
-                    <input type="number" id="counterS" min="0" max="59" value="0">
+                <div class="minuteCss">
+                    <p class="digitalCss_label">Minutes</p>
                 </div>
-                <div id="counterOut" style="display: none;">
-                    00:00:00
+                <div class="secondCss">
+                    <p class="digitalCss_label">Seconds</p>
                 </div>
-                <br>
-                <button type="button" onclick="resetCounter()" name="reset" class="buttonCss1">重置</button>
-                <button type="button" onclick="startedCounter()" id="startC" class="buttonCss">开始</button>
-                <button type="button" onclick="pausedCounter()" id="pauseC" style="display: none;" class="buttonCss2">暂停</button>
-            </form>
-        </div>
-        <!-- 参数调整时间 -->
-        <div id="clockTitle">
-            <p class="labelTitle">
-                时钟<br>clock
-                <div class="circle"></div>
-            </p>    
-        </div>
-        <div id="setter">
-            <form id="couterForm">
-                <input type="number" id="clockH" min="0" max="24" value=0>
-                <input type="number" id="clockM" min="0" max="59" value=0>
-                <input type="number" id="clockS" min="0" max="59" value=0><br>
-                <button type="button" onclick="resetTime()" name="reset" class="buttonCss1">重置</button>
-                <button type="button" onclick="confirmClock()" id="confirmC" class="buttonCss">确认</button>
-            </form>
+            </div>
+            <div id="digital">00:00:00</div>
+            <!-- 闹钟 -->
+            <div id="alarmTitle">
+                <p class="labelTitle">
+                    闹钟<br>alarm
+                    <div class="circle"></div>
+                </p>    
+            </div>
+            <div id="alarm">
+                <form id="alarmForm">
+                    <input type="time" id="alarmTime" value="12:12">
+                    <div class="alarmbuttonCss">
+                        <input type="radio" name="alarm" value="on" onchange="alarmon()" id="alarmonCss">
+                        <label for="alarmonCss" class="onCss">
+                            <p>ON</p>
+                        </label>
+                        <input type="radio" name="alarm" value="off" onchange="alarmoff()" checked="true" id="alarmoffCss">
+                        <label for="alarmoffCss" class="offCss">
+                            <p>OFF</p>
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <!-- 秒表 -->
+            <div id="stopwatchTitle">
+                <p class="labelTitle">
+                    秒表<br>stopwatch
+                    <div class="circle"></div>
+                </p>    
+            </div>
+            <div id="se">
+                <form id="seForm">
+                    <div id="stopwatchtimeCss">
+                        <div id="seDigital">00:00.00</div>
+                    </div>              
+                    <button type="button" onclick="resetSe()" name="reset" class="buttonCss1">重置</button>
+                    <button type="button" onclick="started()" id="start" class="buttonCss">开始</button>
+                    <button type="button" onclick="paused()" id="pause" style="display: none;" class="buttonCss">暂停</button>
+                </form>
+            </div>
+            <!-- 计时器 -->
+            <div id="timerTitle">
+                <p class="labelTitle">
+                    计时器<br>timer
+                    <div class="circle"></div>
+                </p>    
+            </div>
+            <div id="counter">
+                <form id="couterForm">
+                    <div id="counterIn">
+                        <input type="number" id="counterH" min="0" max="23" value="0">
+                        <input type="number" id="counterM" min="0" max="59" value="0">
+                        <input type="number" id="counterS" min="0" max="59" value="0">
+                    </div>
+                    <div id="counterOut" style="display: none;">
+                        00:00:00
+                    </div>
+                    <br>
+                    <button type="button" onclick="resetCounter()" name="reset" class="buttonCss1">重置</button>
+                    <button type="button" onclick="startedCounter()" id="startC" class="buttonCss">开始</button>
+                    <button type="button" onclick="pausedCounter()" id="pauseC" style="display: none;" class="buttonCss2">暂停</button>
+                </form>
+            </div>
+            <!-- 参数调整时间 -->
+            <div id="clockTitle">
+                <p class="labelTitle">
+                    时钟<br>clock
+                    <div class="circle"></div>
+                </p>    
+            </div>
+            <div id="setter">
+                <form id="couterForm">
+                    <input type="number" id="clockH" min="0" max="24" value=0>
+                    <input type="number" id="clockM" min="0" max="59" value=0>
+                    <input type="number" id="clockS" min="0" max="59" value=0><br>
+                    <button type="button" onclick="resetTime()" name="reset" class="buttonCss1">重置</button>
+                    <button type="button" onclick="confirmClock()" id="confirmC" class="buttonCss">确认</button>
+                </form>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
