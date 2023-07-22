@@ -16,7 +16,8 @@ var mp = document.getElementById("minPointer");
 addMinRot(mp);
 
 var sp = document.getElementById("secPointer");
-addSecRot(sp);
+var sp_j = document.getElementById('secPointer_judgearea');
+addSecRot(sp_j);
 
 // 准备就绪，时间恢复
 resetTime();
@@ -213,6 +214,8 @@ function setPointers() {
     // 秒针部件
     var secR = Math.floor(s * 6);
     sp.setAttribute("transform", "rotate(" + secR + " " + centerX + " " + centerY + ")");
+    sp_j.setAttribute("transform", "rotate(" + secR + " " + centerX + " " + centerY + ")");
+
     // 分针部件
     var minR = Math.floor(m * 6 + s / 10);
     mp.setAttribute("transform", "rotate(" + minR + " " + centerX + " " + centerY + ")");
@@ -253,6 +256,8 @@ function addSecRot(p) {
             lastAngle = currentAngle;
             var rotation = currentAngle + 90;
             p.setAttribute("transform", "rotate(" + rotation + " " + centerX + " " + centerY + ")");
+            sp.setAttribute("transform", "rotate(" + rotation + " " + centerX + " " + centerY + ")");
+
         }
     });
 }
