@@ -1,5 +1,5 @@
 // 中心点位置
-var centerX = 540;
+var centerX = 360;
 var centerY = 360;
 // h,m,s对应小时、分钟、秒钟,t表示秒单位累积时间
 var h, m, s, t;

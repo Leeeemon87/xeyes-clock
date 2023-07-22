@@ -13,13 +13,183 @@
         <div id="svgclock">
             <svg id="canvas">
                 <!-- svg写在这一部分 -->
-                <circle id="outline" cx=540px cy=360px r=345px stroke="black" stroke-width="3px" fill="transparent">
-                </circle>
-                <circle id="inline" cx=540px cy=360px r=320px stroke="black" stroke-width="2px" fill="transparent"></circle>
-                <polygon id="minPointer" points="538,80 542,80 546,360 534,360" fill=black></polygon>
-                <polygon id="houPointer" points="536,150 544,150 548,360 532,360" fill=green></polygon>
-                <circle id="secCenter" cx=540 cy=360 r=12 style="fill:red"></circle>
-                <polygon id="secPointer" points="538,70 542,70 544,360 536,360" fill=red></polygon>
+                <circle id="sec_outline" cx=360px cy=360px r=345px stroke="black" stroke-width="3px" fill="#D7D7D7"></circle>
+
+                <text class="sec_scale" x="352px" y="46px" transform="rotate(0 360 360)">0</text>
+
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(6 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(12 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(18 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(24 360 360)"></circle>
+
+                <text class="sec_scale" x="352px" y="46px" transform="rotate(30 360 360)">5</text>
+
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(36 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(42 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(48 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(54 360 360)"></circle>
+
+                <text class="sec_scale" x="344px" y="46px" transform="rotate(60 360 360)">10</text>
+
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(66 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(72 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(78 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(84 360 360)"></circle>
+
+                <text class="sec_scale" x="344px" y="46px" transform="rotate(90 360 360)">15</text>
+
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(96 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(102 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(108 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(114 360 360)"></circle>
+
+                <text class="sec_scale" x="344px" y="697px" transform="rotate(300 360 360)">20</text>
+
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(126 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(132 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(138 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(144 360 360)"></circle>
+
+                <text class="sec_scale" x="344px" y="697px" transform="rotate(330 360 360)">25</text>
+
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(156 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(162 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(168 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(174 360 360)"></circle>
+
+                <text class="sec_scale" x="344px" y="697px" transform="rotate(0 360 360)">30</text>
+
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(186 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(192 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(198 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(204 360 360)"></circle>
+
+                <text class="sec_scale" x="344px" y="697px" transform="rotate(30 360 360)">35</text>
+
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(216 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(222 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(228 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(234 360 360)"></circle>
+
+                <text class="sec_scale" x="344px" y="697px" transform="rotate(60 360 360)">40</text>
+
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(246 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(252 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(258 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(264 360 360)"></circle>
+
+                <text class="sec_scale" x="344px" y="697px" transform="rotate(90 360 360)">45</text>
+
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(276 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(282 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(288 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(294 360 360)"></circle>
+
+                <text class="sec_scale" x="344px" y="46px" transform="rotate(300 360 360)">50</text>
+
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(306 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(312 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(318 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(324 360 360)"></circle>
+
+                <text class="sec_scale" x="344px" y="46px" transform="rotate(330 360 360)">55</text>
+
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(336 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(342 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(348 360 360)"></circle>
+                <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(354 360 360)"></circle>
+
+                <circle id="sec_inline" cx=360px cy=360px r=306px stroke="black" stroke-width="3px" fill="#FFFFFF"></circle>
+                <polygon id="secPointer" points="358,41 362,41 364,360 356,360" fill=red></polygon>
+
+
+
+
+
+                <circle id="hour_outline" cx=360px cy=360px r=216px stroke="black" stroke-width="3px" fill="#D7D7D7"></circle>
+
+                <text class="hour_scale" x="346px" y="172px" transform="rotate(0 360 360)">XII</text>
+
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(7.5 360 360)"></circle>
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(15 360 360)"></circle>
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(22.5 360 360)"></circle>
+
+                <text class="hour_scale" x="356px" y="172px" transform="rotate(30 360 360)">I</text>
+
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(37.5 360 360)"></circle>
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(45 360 360)"></circle>
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(52.5 360 360)"></circle>
+
+                <text class="hour_scale" x="353px" y="172px" transform="rotate(60 360 360)">II</text>
+
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(67.5 360 360)"></circle>
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(75 360 360)"></circle>
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(82.5 360 360)"></circle>
+
+                <text class="hour_scale" x="350px" y="172px" transform="rotate(90 360 360)">III</text>
+
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(97.5 360 360)"></circle>
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(105 360 360)"></circle>
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(112.5 360 360)"></circle>
+
+                <text class="hour_scale" x="349px" y="565px" transform="rotate(300 360 360)">IV</text>
+
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(127.5 360 360)"></circle>
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(135 360 360)"></circle>
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(142.5 360 360)"></circle>
+
+                <text class="hour_scale" x="352px" y="565px" transform="rotate(330 360 360)">V</text>
+
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(157.5 360 360)"></circle>
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(165 360 360)"></circle>
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(172.5 360 360)"></circle>
+
+                <text class="hour_scale" x="349px" y="565px" transform="rotate(0 360 360)">VI</text>
+
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(187.5 360 360)"></circle>
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(195 360 360)"></circle>
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(202.5 360 360)"></circle>
+
+                <text class="hour_scale" x="346px" y="565px" transform="rotate(30 360 360)">VII</text>
+
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(217.5 360 360)"></circle>
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(225 360 360)"></circle>
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(232.5 360 360)"></circle>
+
+                <text class="hour_scale" x="343px" y="565px" transform="rotate(60 360 360)">VIII</text>
+
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(247.5 360 360)"></circle>
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(255 360 360)"></circle>
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(262.5 360 360)"></circle>
+
+                <text class="hour_scale" x="349px" y="565px" transform="rotate(90 360 360)">IX</text>
+
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(277.5 360 360)"></circle>
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(285 360 360)"></circle>
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(292.5 360 360)"></circle>
+
+                <text class="hour_scale" x="349px" y="172px" transform="rotate(330 360 360)">XI</text>
+
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(307.5 360 360)"></circle>
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(315 360 360)"></circle>
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(322.5 360 360)"></circle>
+
+                <text class="hour_scale" x="352px" y="172px" transform="rotate(300 360 360)">X</text>
+
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(337.5 360 360)"></circle>
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(345 360 360)"></circle>
+                <circle cx="360px" cy="164px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(352.5 360 360)"></circle>
+
+                <circle id="hour_inline" cx="360px" cy="360px" r="177px" stroke="black" stroke-width="3px" fill="#F0F0F0"></circle>
+
+
+
+
+
+                <polygon id="minPointer" points="358,70 362,70 366,360 354,360" fill=black></polygon>
+                <polygon id="houPointer" points="356,170 364,170 368,360 352,360" fill=green></polygon>
+                <circle id="secCenter" cx=360 cy=360 r=12 style="fill:red"></circle>
+                
             </svg>
         </div>
         <!-- 以下部分需要css样式 -->
