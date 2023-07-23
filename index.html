@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
 
 <head>
@@ -13,14 +13,18 @@
         <div id="svgclock">
             <svg id="canvas">
                 <!-- svg写在这一部分 -->
-                <circle id="sec_outline" cx=360px cy=360px r=345px stroke="black" stroke-width="3px" fill="#D7D7D7"></circle>
+                <circle id="sec_outline" cx=360px cy=360px r=345px stroke="black" stroke-width="3px" fill="#E5E4E2"></circle>
 
                 <text class="sec_scale" x="352px" y="46px" transform="rotate(0 360 360)">0</text>
+
+                
 
                 <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(6 360 360)"></circle>
                 <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(12 360 360)"></circle>
                 <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(18 360 360)"></circle>
                 <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(24 360 360)"></circle>
+
+                <circle id="inside_circle" cx=360px cy=360px r=200px stroke="black" stroke-width="3px" fill="#E5E4E2"></circle>
 
                 <text class="sec_scale" x="352px" y="46px" transform="rotate(30 360 360)">5</text>
 
@@ -98,17 +102,58 @@
                 <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(342 360 360)"></circle>
                 <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(348 360 360)"></circle>
                 <circle cx="360px" cy="35px" r="1px" stroke="black" stroke-width="3px" fill="transparent" transform="rotate(354 360 360)"></circle>
+                
+
+                
 
                 <circle id="sec_inline" cx=360px cy=360px r=306px stroke="black" stroke-width="3px" fill="#FFFFFF"></circle>
 
-                <polygon id="secPointer" points="357,41 363,41 368,360 352,360" fill=red></polygon>
+                <polygon points ="514,230 526,230 530,240 542,241 510,245 " stroke="black" stroke-width="2px" fill="#C0C0C0" ></polygon>
+                <polygon points ="514,230 526,230 530,240 542,241 510,245 " stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(15 520 360)"></polygon>
+                <polygon points ="514,230 526,230 530,240 542,241 510,245 " stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(30 520 360)"></polygon>
+                <polygon points ="514,230 526,230 530,240 542,241 510,245 " stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(45 520 360)"></polygon>
+                <polygon points ="514,230 526,230 530,240 542,241 510,245 " stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(60 520 360)"></polygon>
+                <polygon points ="514,230 526,230 530,240 542,241 510,245 " stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(75 520 360)"></polygon>
+                <polygon points ="514,230 526,230 530,240 542,241 510,245 " stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(90 520 360)"></polygon>
+                <polygon points ="514,230 526,230 530,240 542,241 510,245 " stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(105 520 360)"></polygon>
+                <polygon points ="514,230 526,230 530,240 542,241 510,245 " stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(120 520 360)"></polygon>
+                <polygon points ="514,230 526,230 530,240 542,241 510,245 " stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(135 520 360)"></polygon>
+                <polygon points ="514,230 526,230 530,240 542,241 510,245 " stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(150 520 360)"></polygon>
+                <polygon points ="514,230 526,230 530,240 542,241 510,245 " stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(165 520 360)"></polygon>
+                <polygon points ="514,230 526,230 530,240 542,241 510,245 " stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(180 520 360)"></polygon>
+
+                <circle  cx=520px cy=360px r=120px stroke="transparent" stroke-width="1px" fill="#C0C0C0" ></circle>
+                <circle  cx=520px cy=360px r=95px stroke="black" stroke-width="2px" fill="#C0C0C0" ></circle>
+
+                <circle  cx=560px cy=320px r=20px stroke="black" stroke-width="2px" fill="#FFFFFF" ></circle>
+                <circle  cx=560px cy=320px r=20px stroke="black" stroke-width="2px" fill="#FFFFFF" transform="rotate(60 520 360)" ></circle>                
+                <circle  cx=560px cy=320px r=20px stroke="black" stroke-width="2px" fill="#FFFFFF" transform="rotate(120 520 360)" ></circle>
+
+                <polygon points ="194,190 206,190 208,200 219,201 191,202" stroke="black" stroke-width="2px" fill="#C0C0C0" ></polygon>
+                <polygon points ="194,190 206,190 208,200 219,201 191,202" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(20 200 280)" ></polygon>
+                <polygon points ="194,190 206,190 208,200 219,201 191,202" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(340 200 280)" ></polygon>
+                <polygon points ="194,190 206,190 208,200 219,201 191,202" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(320 200 280)" ></polygon>
+                <polygon points ="194,190 206,190 208,200 219,201 191,202" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(300 200 280)" ></polygon>
+                <polygon points ="194,190 206,190 208,200 219,201 191,202" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(280 200 280)" ></polygon>
+                <polygon points ="194,190 206,190 208,200 219,201 191,202" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(260 200 280)" ></polygon>
+                <polygon points ="194,190 206,190 208,200 219,201 191,202" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(240 200 280)" ></polygon>
+                <polygon points ="194,190 206,190 208,200 219,201 191,202" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(220 200 280)" ></polygon>
+                <polygon points ="194,190 206,190 208,200 219,201 191,202" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(200 200 280)" ></polygon>
+                <polygon points ="194,190 206,190 208,200 219,201 191,202" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(180 200 280)" ></polygon>
+
+
+                <circle  cx=200px cy=280px r=80px stroke="transparent" stroke-width="2px" fill="#C0C0C0" ></circle>
+                <circle  cx=200px cy=280px r=60px stroke="black" stroke-width="2px" fill="#FFFFFF" ></circle>
+
+                <polygon id="secPointer" points="358,41 362,41 366,80 368,360 352,360 354,80" stroke="white"stroke-width="1px" fill=red></polygon>
                 <polygon id="secPointer_judgearea" points="340,41 380,41 380,360 340,360" fill='transparent'></polygon>
 
+                
 
+                
+                
 
-
-
-                <circle id="hour_outline" cx=360px cy=360px r=216px stroke="black" stroke-width="3px" fill="#D7D7D7"></circle>
+                <circle id="hour_outline" cx=360px cy=360px r=216px stroke="black" stroke-width="3px" fill="#E5E4E2"></circle>
 
                 <text class="hour_scale" x="346px" y="172px" transform="rotate(0 360 360)">XII</text>
 
@@ -184,13 +229,86 @@
 
                 <circle id="hour_inline" cx="360px" cy="360px" r="177px" stroke="black" stroke-width="3px" fill="#F0F0F0"></circle>
 
+                <polygon points ="397,200 403,200 404,205 409,206 396,207" stroke="black" stroke-width="1px" fill="#C0C0C0"></polygon>
+                <polygon points ="397,200 403,200 404,205 409,206 396,207" stroke="black" stroke-width="1px" fill="#C0C0C0" transform="rotate(30 400 230)"></polygon>
+                <polygon points ="397,200 403,200 404,205 409,206 396,207" stroke="black" stroke-width="1px" fill="#C0C0C0" transform="rotate(60 400 230)"></polygon>
+                <polygon points ="397,200 403,200 404,205 409,206 396,207" stroke="black" stroke-width="1px" fill="#C0C0C0" transform="rotate(90 400 230)"></polygon>
+                <polygon points ="397,200 403,200 404,205 409,206 396,207" stroke="black" stroke-width="1px" fill="#C0C0C0" transform="rotate(120 400 230)"></polygon>
+                <polygon points ="397,200 403,200 404,205 409,206 396,207" stroke="black" stroke-width="1px" fill="#C0C0C0" transform="rotate(150 400 230)"></polygon>
+                <polygon points ="397,200 403,200 404,205 409,206 396,207" stroke="black" stroke-width="1px" fill="#C0C0C0" transform="rotate(180 400 230)"></polygon>
+                <polygon points ="397,200 403,200 404,205 409,206 396,207" stroke="black" stroke-width="1px" fill="#C0C0C0" transform="rotate(210 400 230)"></polygon>
+                <polygon points ="397,200 403,200 404,205 409,206 396,207" stroke="black" stroke-width="1px" fill="#C0C0C0" transform="rotate(240 400 230)"></polygon>
+                <polygon points ="397,200 403,200 404,205 409,206 396,207" stroke="black" stroke-width="1px" fill="#C0C0C0" transform="rotate(270 400 230)"></polygon>
+                <polygon points ="397,200 403,200 404,205 409,206 396,207" stroke="black" stroke-width="1px" fill="#C0C0C0" transform="rotate(300 400 230)"></polygon>
+                <polygon points ="397,200 403,200 404,205 409,206 396,207" stroke="black" stroke-width="1px" fill="#C0C0C0" transform="rotate(330 400 230)"></polygon>
 
+                <circle id="down_circle1" cx=400px cy=230px r=25px stroke="transparent" stroke-width="1px" fill="#C0C0C0"></circle>
+                <circle id="down_circle2" cx=400px cy=230px r=15px stroke="black" stroke-width="1px" fill="white"></circle>
 
+                <polygon points ="297,450 303,450 304,455 309,456 296,457" stroke="black" stroke-width="1px" fill="#C0C0C0"></polygon>
+                <polygon points ="297,450 303,450 304,455 309,456 296,457" stroke="black" stroke-width="1px" fill="#C0C0C0" transform="rotate(30 300 480)"></polygon>
+                <polygon points ="297,450 303,450 304,455 309,456 296,457" stroke="black" stroke-width="1px" fill="#C0C0C0" transform="rotate(60 300 480)"></polygon>
+                <polygon points ="297,450 303,450 304,455 309,456 296,457" stroke="black" stroke-width="1px" fill="#C0C0C0" transform="rotate(90 300 480)"></polygon>
+                <polygon points ="297,450 303,450 304,455 309,456 296,457" stroke="black" stroke-width="1px" fill="#C0C0C0" transform="rotate(120 300 480)"></polygon>
+                <polygon points ="297,450 303,450 304,455 309,456 296,457" stroke="black" stroke-width="1px" fill="#C0C0C0" transform="rotate(150 300 480)"></polygon>
+                <polygon points ="297,450 303,450 304,455 309,456 296,457" stroke="black" stroke-width="1px" fill="#C0C0C0" transform="rotate(180 300 480)"></polygon>
+                <polygon points ="297,450 303,450 304,455 309,456 296,457" stroke="black" stroke-width="1px" fill="#C0C0C0" transform="rotate(210 300 480)"></polygon>
+                <polygon points ="297,450 303,450 304,455 309,456 296,457" stroke="black" stroke-width="1px" fill="#C0C0C0" transform="rotate(240 300 480)"></polygon>
+                <polygon points ="297,450 303,450 304,455 309,456 296,457" stroke="black" stroke-width="1px" fill="#C0C0C0" transform="rotate(270 300 480)"></polygon>
+                <polygon points ="297,450 303,450 304,455 309,456 296,457" stroke="black" stroke-width="1px" fill="#C0C0C0" transform="rotate(300 300 480)"></polygon>
+                <polygon points ="297,450 303,450 304,455 309,456 296,457" stroke="black" stroke-width="1px" fill="#C0C0C0" transform="rotate(330 300 480)"></polygon>
 
+                <circle id="down_circle1" cx=300px cy=480px r=25px stroke="transparent" stroke-width="1px" fill="#C0C0C0"></circle>
+                <circle id="down_circle2" cx=300px cy=480px r=15px stroke="black" stroke-width="1px" fill="white"></circle>
 
-                <polygon id="minPointer" points="358,70 362,70 366,360 354,360" fill=black></polygon>
-                <polygon id="houPointer" points="356,170 364,170 368,360 352,360" fill=green></polygon>
-                <circle id="secCenter" cx=360 cy=360 r=12 style="fill:red"></circle>
+                <polygon points ="354,220 366,220 370,230 380,231 390,233 350,235" stroke="black" stroke-width="2px" fill="#C0C0C0"></polygon>
+                <polygon points ="354,220 366,220 370,230 380,231 390,233 350,235" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(15 360 360)"></polygon>
+                <polygon points ="354,220 366,220 370,230 380,231 390,233 350,235" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(30 360 360)"></polygon>
+                <polygon points ="354,220 366,220 370,230 380,231 390,233 350,235" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(45 360 360)"></polygon>
+                <polygon points ="354,220 366,220 370,230 380,231 390,233 350,235" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(60 360 360)"></polygon>
+                <polygon points ="354,220 366,220 370,230 380,231 390,233 350,235" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(75 360 360)"></polygon>
+                <polygon points ="354,220 366,220 370,230 380,231 390,233 350,235" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(90 360 360)"></polygon>
+                <polygon points ="354,220 366,220 370,230 380,231 390,233 350,235" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(105 360 360)"></polygon>
+                <polygon points ="354,220 366,220 370,230 380,231 390,233 350,235" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(120 360 360)"></polygon>
+                <polygon points ="354,220 366,220 370,230 380,231 390,233 350,235" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(135 360 360)"></polygon>
+                <polygon points ="354,220 366,220 370,230 380,231 390,233 350,235" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(150 360 360)"></polygon>
+                <polygon points ="354,220 366,220 370,230 380,231 390,233 350,235" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(165 360 360)"></polygon>
+                <polygon points ="354,220 366,220 370,230 380,231 390,233 350,235" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(180 360 360)"></polygon>
+                <polygon points ="354,220 366,220 370,230 380,231 390,233 350,235" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(195 360 360)"></polygon>
+                <polygon points ="354,220 366,220 370,230 380,231 390,233 350,235" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(210 360 360)"></polygon>
+                <polygon points ="354,220 366,220 370,230 380,231 390,233 350,235" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(225 360 360)"></polygon>
+                <polygon points ="354,220 366,220 370,230 380,231 390,233 350,235" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(240 360 360)"></polygon>
+                <polygon points ="354,220 366,220 370,230 380,231 390,233 350,235" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(255 360 360)"></polygon>
+                <polygon points ="354,220 366,220 370,230 380,231 390,233 350,235" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(270 360 360)"></polygon>
+                <polygon points ="354,220 366,220 370,230 380,231 390,233 350,235" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(285 360 360)"></polygon>
+                <polygon points ="354,220 366,220 370,230 380,231 390,233 350,235" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(300 360 360)"></polygon>
+                <polygon points ="354,220 366,220 370,230 380,231 390,233 350,235" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(315 360 360)"></polygon>
+                <polygon points ="354,220 366,220 370,230 380,231 390,233 350,235" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(330 360 360)"></polygon>
+                <polygon points ="354,220 366,220 370,230 380,231 385,232 350,235" stroke="black" stroke-width="2px" fill="#C0C0C0" transform="rotate(345 360 360)"></polygon>
+                
+
+                
+
+                <circle id="outside_circle" cx=360px cy=360px r=130px stroke="transparent" stroke-width="1px" fill="#C0C0C0"></circle>
+                <circle id="inside_circle" cx=360px cy=360px r=115px stroke="black" stroke-width="2px" fill="#C0C0C0"></circle>
+                
+                <circle  cx=310px cy=310px r=25px stroke="black" stroke-width="2px" fill="#FFFFFF"></circle>
+                <circle  cx=310px cy=310px r=25px stroke="black" stroke-width="2px" fill="#FFFFFF" transform="rotate(60 360 360)"></circle>
+                <circle  cx=310px cy=310px r=25px stroke="black" stroke-width="2px" fill="#FFFFFF" transform="rotate(120 360 360)"></circle>
+                <circle  cx=310px cy=310px r=25px stroke="black" stroke-width="2px" fill="#FFFFFF" transform="rotate(180 360 360)"></circle>
+                <circle  cx=310px cy=310px r=25px stroke="black" stroke-width="2px" fill="#FFFFFF" transform="rotate(240 360 360)"></circle>
+                <circle  cx=310px cy=310px r=25px stroke="black" stroke-width="2px" fill="#FFFFFF" transform="rotate(300 360 360)"></circle>
+
+                <circle  cx=360px cy=360px r=25px stroke="transparent" stroke-width="2px" fill="#FFFFFF" transform="rotate(300 360 360)"></circle>
+                <circle  cx=360px cy=360px r=30px stroke="#504A4B" stroke-width="2px" fill="#FFFFFF" transform="rotate(300 360 360)"></circle>
+                
+                
+                
+                
+
+                <polygon id="houPointer" points="358,170 362,170 378,360 368,400 352,400 342,360" stroke="white"stroke-width="1px"style="fill:rgb(35, 25, 46)"></polygon>
+                <polygon id="minPointer" points="358,70 362,70 365,150 375,360 366,410 354,410 345,360 355,150" stroke="white"stroke-width="1px" style="fill:rgb(48, 45, 26)"></polygon>
+                <circle id="secCenter" cx=360 cy=360 r=22 stroke="#B6B6B4" stroke-width="2px" style="fill:rgb(5, 5, 5)"></circle>
                 
             </svg>
         </div>
