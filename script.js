@@ -3,6 +3,8 @@ var centerX = 360;
 var centerY = 360;
 // h,m,s对应小时、分钟、秒钟,t表示秒单位累积时间
 var h, m, s, t;
+// dt表示最小时间精度（毫秒），ndt表示除整数秒外最小单位精度的个数
+var dt = 10, ndt = 0;
 // 记录计时函数的id
 var timeid;
 // 记录闹钟是否打开
@@ -181,9 +183,12 @@ function formatHM() {
 }
 // 时间增加功能
 function addTime() {
-    // 有延迟所以设置为900ms
-    timeid = setTimeout(addTime, 1000);
-    t++;
+    timeid = setTimeout(addTime, dt);
+    ndt++;
+    if (ndt >= 1000 / dt) {
+        ndt = 0;
+        t++;
+    }
     h = Math.floor(t / 3600);
     m = Math.floor((t % 3600) / 60);
     s = t % 60;
@@ -212,15 +217,16 @@ function setTime() {
 // 刷新指针
 function setPointers() {
     // 秒针部件
-    var secR = Math.floor(s * 6);
+    var secVal = s + (ndt * dt / 1000);
+    var secR = secVal * 6;
     sp.setAttribute("transform", "rotate(" + secR + " " + centerX + " " + centerY + ")");
     sp_j.setAttribute("transform", "rotate(" + secR + " " + centerX + " " + centerY + ")");
 
     // 分针部件
-    var minR = Math.floor(m * 6 + s / 10);
+    var minR = m * 6 + secVal / 10;
     mp.setAttribute("transform", "rotate(" + minR + " " + centerX + " " + centerY + ")");
     // 时针部件
-    var houR = Math.floor(h * 30 + m / 2);
+    var houR = Math.floor(h * 30 + m / 2 + secVal / 120);
     hp.setAttribute("transform", "rotate(" + houR + " " + centerX + " " + centerY + ")");
 }
 // 添加鼠标拨动功能
