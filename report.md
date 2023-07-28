@@ -7,7 +7,7 @@
 
 ### SVG: 
 
-    张泽卿 
+    张泽卿 2021011807 zq-zhang21@mails.tsinghua.edu.cn
 
     刘张毅 2021011808 2482173874@qq.com
 
